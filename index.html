@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number to words</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Number To Words</h1>
+    <main>
+      <form id = "form">
+        <label for="num">Enter Number</label>
+        <input type="number" id="num" name="num">
+        <label for="convrt">Converted:</label>
+        <input type="text" id="result" name="result" readonly>
+        <div class="btn">
+          <input type="button" name="btn" onclick="toWords()" value="Convert">
+        </div>
+      </form> 
+    </main>
+  </body>
+</html>
