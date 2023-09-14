@@ -33,9 +33,9 @@ const prefixes = {
 };
 
 
-function toWords(){
+function toWords() {
   const number = document.getElementById('num').value;
-  const result1 = ones[number]; 
+  const result1 = ones[number];
 
   if (+num.value in ones) {
     document.getElementById('result').setAttribute('value', result1);
@@ -44,65 +44,57 @@ function toWords(){
   const numArray = num.value.split("");
 
   if (numArray.length === 2 && +num.value > 19) {
-    document.getElementById('result').setAttribute('value', prefixes[numArray[0]]+ " " + ones[numArray[1]], result);
+    document.getElementById('result').setAttribute('value', prefixes[numArray[0]] + " " + ones[numArray[1]], result);
   }
 
   if (numArray.length === 3) {
     if (+numArray[1] === 0) {
-      document.getElementById('result').setAttribute('value', ones[numArray[0]]+ " " + "HUNDRED" + " " + ones[numArray[2]], result);
-    } 
-    else if(+numArray[1] < 2)
-     {
-   document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + "HUNDRED" + " " +  ones[+[numArray[1], +  numArray[2]].join("")], result);
+      document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + "HUNDRED" + " " + ones[numArray[2]], result);
     }
-    else
-     {
-    document.getElementById('result').setAttribute('value', ones[numArray[0]]+" " + " HUNDRED " +  prefixes[numArray[1]] +  " " + ones[numArray[2]], result);
+    else if (+numArray[1] < 2) {
+      document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + "HUNDRED" + " " + ones[+[numArray[1], +  numArray[2]].join("")], result);
+    }
+    else {
+      document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + " HUNDRED " + prefixes[numArray[1]] + " " + ones[numArray[2]], result);
+    }
   }
-}
-if (numArray.length === 3) {
+  if (numArray.length === 3) {
     if (+numArray[1] === 0) {
-      document.getElementById('result').setAttribute('value', ones[numArray[0]]+ " " + "HUNDRED" + " " + ones[numArray[2]], result);
-    } 
-    else if(+numArray[1] < 2)
-     {
-   document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + "HUNDRED" + " " +  ones[+[numArray[1], +  numArray[2]].join("")], result);
+      document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + "HUNDRED" + " " + ones[numArray[2]], result);
     }
-    else
-     {
-    document.getElementById('result').setAttribute('value', ones[numArray[0]]+" " + " HUNDRED " +  prefixes[numArray[1]] +  " " + ones[numArray[2]], result);
+    else if (+numArray[1] < 2) {
+      document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + "HUNDRED" + " " + ones[+[numArray[1], +  numArray[2]].join("")], result);
+    }
+    else {
+      document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + " HUNDRED " + prefixes[numArray[1]] + " " + ones[numArray[2]], result);
+    }
   }
-}
-if (numArray.length === 3) {
-  if (+numArray[1] === 0) {
-    document.getElementById('result').setAttribute('value', ones[numArray[0]]+ " " + "HUNDRED" + " " + ones[numArray[2]], result);
-  } 
-  else if(+numArray[1] < 2)
-   {
- document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + "HUNDRED" + " " +  ones[+[numArray[1], +  numArray[2]].join("")], result);
+  if (numArray.length === 3) {
+    if (+numArray[1] === 0) {
+      document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + "HUNDRED" + " " + ones[numArray[2]], result);
+    }
+    else if (+numArray[1] < 2) {
+      document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + "HUNDRED" + " " + ones[+[numArray[1], +  numArray[2]].join("")], result);
+    }
+    else {
+      document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + " HUNDRED " + prefixes[numArray[1]] + " " + ones[numArray[2]], result);
+    }
   }
-  else
-   {
-  document.getElementById('result').setAttribute('value', ones[numArray[0]]+" " + " HUNDRED " +  prefixes[numArray[1]] +  " " + ones[numArray[2]], result);
-}
-}
-if (numArray.length === 4) {
-  if (+numArray[1] === 0) {
-    document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " +  "THOUSAND" + ones[numArray[1]]+ " " + ones[numArray[3]], result);
-  } 
-  else if(+numArray[1] < 2)
-   {
-    document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + " THOUSAND" + ones[numArray[1]] + " " + "HUNDRED" + " " +  ones[+[numArray[2]  +  numArray[3]].join("")], result);
+  if (numArray.length === 4) {
+    if (+numArray[1] === 0) {
+      document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + "THOUSAND" + ones[numArray[1]] + " " + ones[numArray[3]], result);
+    }
+    else if (+numArray[1] < 2) {
+      document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + " THOUSAND" + ones[numArray[1]] + " " + "HUNDRED" + " " + ones[+[numArray[2] + numArray[3]].join("")], result);
+    }
+    else {
+      document.getElementById('result').setAttribute('value', ones[numArray[0]] + " " + "THOUSAND " + ones[numArray[1]] + " " + "HUNDRED" + " " + prefixes[numArray[2]] + " " + " " + ones[numArray[3]], result);
+    }
   }
-  else
-   {
-document.getElementById('result').setAttribute('value', ones[numArray[0]]+ " " + "THOUSAND " + ones[numArray[1]] + " " + "HUNDRED"+ " " + prefixes[numArray[2]]+ " "  + " " + ones[numArray[3]], result);
-}
-}
-/*if(numArray.length === 4){
-  if(+numArray[1] === 0){
-    document.getElementById('result').setAttribute('value', ones[numArray[0]] + " THOUSAND " +  ones[numArray[1]] +  " " + prefixes[numArray[2]], result);
-  }
-}*/
+  /*if(numArray.length === 4){
+    if(+numArray[1] === 0){
+      document.getElementById('result').setAttribute('value', ones[numArray[0]] + " THOUSAND " +  ones[numArray[1]] +  " " + prefixes[numArray[2]], result);
+    }
+  }*/
 
 }
